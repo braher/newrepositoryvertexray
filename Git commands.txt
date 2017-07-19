@@ -1,0 +1,63 @@
+create a new repository:
+git init
+
+checkout a repository:
+git clone /path/to/repository
+when using a remote server, your command will be
+git clone username@host:/path/to/repository
+
+add & commit:
+git add <filename>
+git add *
+
+
+To actually commit these changes use:
+git commit -m "Commit message"
+
+
+pushing changes:
+git push origin master
+
+
+If you have not cloned an existing 
+repository and want to connect your repository to a 
+remote server, you need to add it with:
+git remote add origin <server>
+
+
+branching:
+
+create a new branch named "feature_x" and switch to it using
+git checkout -b feature_x
+
+switch back to master
+git checkout master
+
+and delete the branch again
+git branch -d feature_x
+
+a branch is not available to others unless you push the branch to your remote repository
+git push origin <branch>
+
+
+
+update & merge:
+update your local repository to the newest commit:
+git pull
+
+
+update & merge
+to update your local repository to the newest commit, execute 
+git pull
+in your working directory to fetch and merge remote changes.
+to merge another branch into your active branch (e.g. master), use
+git merge <branch>
+in both cases git tries to auto-merge changes. Unfortunately, this is not always possible and results in conflicts. You are responsible to merge those conflicts manually by editing the files shown by git. After changing, you need to mark them as merged with
+git add <filename>
+before merging changes, you can also preview them by using
+git diff <source_branch> <target_branch>
+
+
+
+replace local changes:
+git checkout -- <filename>
